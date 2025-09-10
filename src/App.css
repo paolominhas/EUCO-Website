@@ -36,3 +36,90 @@
     transform: rotate(360deg);
   }
 }
+
+/* The logo animation! (spin and pulse) */
+@keyframes spin-and-pulse {
+  0% {
+    /* Start at normal size and no rotation */
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    /* At the halfway point, enlarge by 15% and rotate 180 degrees */
+    transform: scale(1.15) rotate(180deg);
+  }
+  100% {
+    /* Return to normal size and complete a full 360-degree rotation */
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/*
+ * This class applies the animation to the euco logo.
+ */
+.logo-animated {
+  /*
+   * animation: [animation-name] [duration] [timing-function] [iteration-count];
+   * The animation runs over 10 seconds, at a constant speed, over an infinite loop.
+   */
+   /* animation: spin-and-pulse 10s linear infinite; */
+  transition: transform 0.4s ease-in-out;
+}
+
+/*
+ * Cool pause when hovering mouse over logo!
+ */
+.logo-animated:hover {
+  /* animation-play-state: paused; */
+  /* This is the state when the mouse is hovering over the element.
+     It scales the logo up to 120% of its size and rotates it 360 degrees. */
+  transform: scale(1.7) rotate(360deg);
+}
+
+/*the FAQ animation */
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth ease-in-out transition */
+}
+
+.faq-answer.open {
+  max-height: 80rem; /* Adjust this value if your answers are longer */
+}
+
+/* --- Logo Styles --- */
+
+/* This class sets the color to the site's signature pink (Tailwind's rose-400) */
+.euco-logo-pink {
+  color: #fb7185;
+}
+
+/* This class sets the color to white */
+.euco-logo-white {
+  color: white;
+}
+
+/* The animation can stay the same */
+.logo-animated {
+  transition: transform 0.4s ease-in-out;
+}
+
+.logo-animated:hover {
+  transform: scale(1.8) rotate(360deg);
+}
+
+@keyframes rotate-large {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* This class will apply our slow, continuous rotation animation */
+.logo-background-animation {
+  /* You can change '60s' to a higher number for a slower rotation
+     or a lower number for a faster one. */
+  animation: rotate-large 60s linear infinite;
+}
