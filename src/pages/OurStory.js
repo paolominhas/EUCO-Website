@@ -48,9 +48,9 @@ const OurStory = () => {
           <ParallaxSection imgUrl="/backgrounds/history-parallax.jpg" title="A Tradition of Collaboration & Touring">
             <p>In the past, the orchestra has joined forces with Glasgow University's Kelvin Ensemble, performing together in both Glasgow and Edinburgh. This has been an extremely successful venture, with works such as Stravinsky's Rite of Spring, Mahler's 5th Symphony, Rachmaninov's 2nd Symphony, Shostakovich's 5th Symphony, Debussy's La Mer and Berlioz Symphony Fantastique. It also seems for a period the orchestra went on tour every other summer – both things we are eager to bring back. The orchestra has toured much of Europe including Spain, Amsterdam, Florence, the Loire Valley, Cornwall, the Highlands of Scotland, Ireland, Orkney, Prague, Salzburg, and Belgium. We have also performed on many occasions as part of the Festival of British Youth Orchestras in the Edinburgh Festival Fringe.</p>
           </ParallaxSection>
-          <div className="bg-gray-900">
-            <InstagramFeedSection />
-          </div>
+          //<div className="bg-gray-900">
+            //<InstagramFeedSection />
+          //</div>
         </div>
       </div>
     </>
