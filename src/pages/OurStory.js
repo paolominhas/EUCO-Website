@@ -4,7 +4,7 @@ import React from 'react';
 import Section from '../components/Section';
 import ParallaxSection from '../components/ParallaxSection';
 import ScrollingImage from '../components/ScrollingImage';
-import InstagramFeedSection from '../components/InstagramFeedSection';
+// import InstagramFeedSection from '../components/InstagramFeedSection';
 
 // It's good practice to keep data in a separate file, but for this example we'll include it here.
 const instagramPostsData = [
