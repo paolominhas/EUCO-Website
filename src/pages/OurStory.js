@@ -5,12 +5,13 @@ import Section from '../components/Section';
 import ParallaxSection from '../components/ParallaxSection';
 import ScrollingImage from '../components/ScrollingImage';
 // It's good practice to keep data in a separate file, but for this example we'll include it here.
+/*
 const instagramPostsData = [
     { id: 1, imgUrl: `${process.env.PUBLIC_URL}/backgrounds/PresidentPost.png`, caption: 'Meet our new president: Srishti', postUrl: 'https://www.instagram.com/p/DNfdztJoaUy/' },
     { id: 2, imgUrl: `${process.env.PUBLIC_URL}/backgrounds/LastConcert.png`, caption: 'Our last concert at Reid Concert Hall.', postUrl: 'https://www.instagram.com/p/DHJFRpgI8lX/' },
     { id: 3, imgUrl: `${process.env.PUBLIC_URL}/backgrounds/Opera.png`, caption: 'Another year of opera complete with ESO and Kristine Donnan!', postUrl: 'https://www.instagram.com/p/DG8hsJDC5US/?img_index=1' },
 ];
-
+*/
 
 const OurStory = () => {
   return (
