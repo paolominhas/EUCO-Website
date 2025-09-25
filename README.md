@@ -1,6 +1,7 @@
 # Project Title: The Official Website for Edinburgh University Chamber Orchestra
 
-[![Deployment Status](https://img.shields.io/vercel/deployment/paolominhas/EUCO-Website/main?label=Vercel)](https://eu-co.co.uk)
+[![Deployment Status](https://img.shields.io/vercel/deployment/paolominhas/EUCO-Website/main?label=Vercel)](https://euco-website.vercel.app)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpaolominhas%2FEUCO-Website)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/paolominhas/EUCO-Website/ci.yml?branch=main)](https://github.com/paolominhas/EUCO-Website/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
