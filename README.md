@@ -7,7 +7,7 @@
 
 This is the official public-facing website for Edinburgh University Chamber Orchestra. It serves as our second most important form of media (after our instagram) with concert information, ticket sales, and news.
 
-![A screenshot of the website homepage (25/09/25).](assets/homepage_screenshot.png)
+![A screenshot of the website homepage (25/09/25).](public/backgrounds/hero-photo.jpg)
 
 ## Table of Contents
 
