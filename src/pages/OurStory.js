@@ -4,7 +4,6 @@ import React from 'react';
 import Section from '../components/Section';
 import ParallaxSection from '../components/ParallaxSection';
 import ScrollingImage from '../components/ScrollingImage';
-
 // It's good practice to keep data in a separate file, but for this example we'll include it here.
 const instagramPostsData = [
     { id: 1, imgUrl: `${process.env.PUBLIC_URL}/backgrounds/PresidentPost.png`, caption: 'Meet our new president: Srishti', postUrl: 'https://www.instagram.com/p/DNfdztJoaUy/' },
