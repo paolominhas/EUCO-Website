@@ -89,9 +89,9 @@
 
 /* --- Logo Styles --- */
 
-/* This class sets the color to the site's signature pink (Tailwind's rose-400) */
+/* This class sets the color to the site's signature pink (Tailwind's blue-400) */
 .euco-logo-pink {
-  color: #fb7185;
+  color: #3ab3ff;
 }
 
 /* This class sets the color to white */
@@ -122,4 +122,34 @@
   /* You can change '60s' to a higher number for a slower rotation
      or a lower number for a faster one. */
   animation: rotate-large 60s linear infinite;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  /* 1. Define the width based on its content */
+  width: fit-content; 
+  /* 2. Run the animation */
+  animation: scroll 10s linear infinite;
+}
+
+/* 3. Pause the animation on hover for better user experience */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  /* 4. Animate to exactly half the width of the doubled content */
+  to {
+    /* We use -50% because the content is duplicated in the React component */
+    transform: translateX(-50%);
+  }
 }

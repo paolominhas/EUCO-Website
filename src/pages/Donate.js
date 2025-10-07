@@ -9,6 +9,30 @@ const Donate = () => {
       <title>Support Us | Sponsor the Edinburgh University Chamber Orchestra</title>
       <meta name="description" content="Support student music in Edinburgh. Learn about sponsorship opportunities with EUCO and help us continue our tradition of high-quality performances." />
 
+      {/* --- Section 1: The Main "Donate" Call-to-Action --- */}
+      <div 
+        className="relative h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/pictures/support-hero.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="relative z-10 p-8">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            Support Student Music
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-200 mt-4 max-w-2xl mx-auto">
+            Your generosity helps us continue our tradition of ambitious, high-quality performances.
+          </p>
+          <a 
+            href="https://www.justgiving.com/crowdfunding/euco-outreach?utm_medium=FA&utm_source=CL"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-8 inline-block px-12 py-4 bg-blue-600 text-black text-lg font-bold rounded-full transform hover:scale-105 transition-transform duration-300"
+          >
+            Donate Now
+          </a>
+        </div>
+      </div>
+
       <Section title="Support Our Music">
         <div className="max-w-4xl mx-auto text-center text-gray-300 text-lg leading-relaxed space-y-6">
           <p>
@@ -17,7 +41,7 @@ const Donate = () => {
           <p>
             Sponsorship can take many forms, from providing raffle prizes for our events to supporting a specific concert. In return, we can offer your brand exposure to a large audience of students and music lovers across Edinburgh.
           </p>
-          <Link to="/contact-us/direct" className="mt-8 inline-block px-8 py-3 bg-rose-600 text-black font-bold rounded-full hover:bg-rose-500 transform hover:scale-105 transition-all duration-300">
+          <Link to="/contact-us/direct" className="mt-8 inline-block px-8 py-3 bg-blue-600 text-black font-bold rounded-full hover:bg-blue-500 transform hover:scale-105 transition-all duration-300">
             Contact Us About Sponsorship
           </Link>
         </div>

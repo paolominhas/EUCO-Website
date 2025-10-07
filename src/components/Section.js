@@ -17,7 +17,7 @@ const Section = ({ title, children, className = '' }) => {
       <div className="container mx-auto">
         
         {/* The section title, which is passed in via the 'title' prop */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-rose-400 mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-400 mb-10">
           {title}
         </h2>
 

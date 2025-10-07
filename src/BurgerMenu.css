@@ -1,0 +1,93 @@
+/* --- General Menu Wrapper --- */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0;
+}
+.bm-menu {
+  background: #000;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  overflow-y: auto !important;
+}
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+}
+
+/* --- Burger Button & Icon Styling (CRUCIAL for positioning and animation) --- */
+.bm-burger-button {
+  position: fixed;
+  width: 30px;
+  height: 24px;
+  top: 20px;   /* Adjust vertical position */
+  right: 20px;  /* Adjust horizontal position */
+}
+.bm-burger-bars {
+  background: #d1d5db; /* Gray color for the bars */
+  height: 12% !important; /* Makes the bars thinner */
+}
+.bm-burger-bars-hover {
+  background: #3ab3ff; /* blue color on hover */
+}
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+.bm-cross {
+  background: #d1d5db;
+}
+
+/* --- Menu Item List and Text Layout Fixes --- */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+}
+.bm-item {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  margin-bottom: 10px;
+  /* FIX: Ensure text wraps and doesn't overflow */
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* --- Custom Styles for Your Menu Links --- */
+.menu-main-link {
+  display: block; /* Ensures it takes its own line */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem; /* Space after main link */
+}
+.menu-sub-link {
+  display: block; /* Ensures it takes its own line */
+  font-size: 1rem;
+  color: #d1d5db;
+  padding-left: 1rem;
+  margin-bottom: 0.75rem; /* Space between sub-links */
+}
+
+.menu-sub-link:hover, .menu-main-link:hover {
+    color: #3ab3ff; /* blue color on hover */
+}
+
+/* Scrollbar styling */
+.bm-menu::-webkit-scrollbar {
+  width: 8px;
+}
+.bm-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bm-menu::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+.bm-menu::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}

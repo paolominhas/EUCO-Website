@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Section from '../components/Section';
+import SignupForm from '../components/SignUpForm';
 
 // Data for the FAQ section
 const faqData = [
@@ -35,7 +36,7 @@ const FAQ = () => {
                 >
                   <span className="font-semibold text-lg text-white">{faq.question}</span>
                   <span className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                    <svg className="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                   </span>
                 </button>
                 {/* The answer is conditionally rendered based on the 'openIndex' state */}
@@ -47,6 +48,7 @@ const FAQ = () => {
           </div>
         </div>
       </Section>
+      <SignupForm />
     </>
   );
 };

@@ -16,14 +16,14 @@ import ContactUsDirectly from './pages/ContactUsDirectly';
 import Donate from './pages/Donate';
 import EducationHub from './pages/education/EducationHub';
 import EducationLayout from './components/EducationLayout';
-import Events from './pages/Events';
+import PastConcerts from './pages/PastConcerts';
 import FAQ from './pages/FAQ';
 import Home from './pages/Home';
 import Opera from './pages/Opera';
 import OurPartners from './pages/OurPartners';
 import OurStory from './pages/OurStory';
 import Outreach from './pages/Outreach';
-import Performances from './pages/Performances';
+import UpcomingConcerts from './pages/UpcomingConcerts';
 import SupportUs from './pages/SupportUs';
 import ComposersPage from './pages/education/ComposersPage';
 import ArticlesPage from './pages/education/ArticlesPage';
@@ -36,7 +36,10 @@ import ProgrammeNotesPage from './pages/education/ProgrammeNotes';
 const PageLayout = () => (
   <>
     <Header />
-    <Outlet /> {/* This is where the specific page component will be rendered */}
+    {/* Wrap the Outlet in a main tag with responsive top padding */}
+    <main className="pt-0 md:pt-12">
+      <Outlet />
+    </main>
     <Footer />
   </>
 );
@@ -74,8 +77,8 @@ function App() {
           <Route path="/about/concerto-competition" element={<ConcertoCompetition />} />
           <Route path="/about/auditions" element={<Auditions />} />
           <Route path="/concerts" element={<Concerts />} />
-          <Route path="/concerts/performances" element={<Performances />} />
-          <Route path="/concerts/events" element={<Events />} />
+          <Route path="/concerts/upcoming" element={<UpcomingConcerts />} />
+          <Route path="/concerts/past" element={<PastConcerts />} />
           <Route path="/concerts/outreach" element={<Outreach />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/contact-us/faq" element={<FAQ />} />
