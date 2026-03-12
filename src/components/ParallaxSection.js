@@ -19,7 +19,7 @@ const ParallaxSection = ({ imgUrl, title, children }) => {
       {/* This inner div provides the dark, translucent container for the content */}
       <div className="container mx-auto bg-gray-900 bg-opacity-70 backdrop-blur-sm p-8 rounded-lg">
         
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-rose-400 mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-400 mb-8">
           {title}
         </h2>
         

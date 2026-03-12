@@ -29,7 +29,7 @@ const ConcertoCompetition = () => {
           <div className="mt-10">
             <button 
               disabled
-              className="px-10 py-4 bg-rose-600 text-black font-bold text-xl rounded-full hover:bg-rose-500 transform transition-all duration-300 cursor-not-allowed opacity-60"
+              className="px-10 py-4 bg-blue-600 text-black font-bold text-xl rounded-full hover:bg-blue-500 transform transition-all duration-300 cursor-not-allowed opacity-60"
             >
               Applications Open Soon
             </button>

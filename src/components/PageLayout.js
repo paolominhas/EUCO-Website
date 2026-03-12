@@ -13,6 +13,7 @@ const PageLayout = () => {
   return (
     <>
       <Header />
+      
       <main>
         {/* The Outlet component from react-router-dom renders the matched child route's component */}
         <Outlet />

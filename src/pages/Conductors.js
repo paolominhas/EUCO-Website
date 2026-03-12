@@ -35,7 +35,7 @@ const Conductors = () => {
             >
               <div className="bg-gray-800 rounded-lg p-6 text-center shadow-lg w-64">
                 <img src={person.img} alt={person.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700 object-cover" />
-                <h4 className="font-bold text-xl text-rose-400">{person.name}</h4>
+                <h4 className="font-bold text-xl text-blue-400">{person.name}</h4>
                 <p className="text-gray-400">{person.role}</p>
               </div>
             </a>

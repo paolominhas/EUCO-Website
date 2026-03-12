@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/paolominhas/spack/opt/spack/darwin-m1/geant4-11.3.2-agah2vy526yv5uwcxzkjs7dvt6cp6hpt/share/Geant4/examples/extended/biasing/B01",
+      "program": "/Users/paolominhas/spack/opt/spack/darwin-m1/geant4-11.3.2-agah2vy526yv5uwcxzkjs7dvt6cp6hpt/share/Geant4/examples/extended/biasing/B01/build/Debug/outDebug"
+    }
+  ]
+}

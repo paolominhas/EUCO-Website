@@ -11,8 +11,8 @@ const AboutTeaserSection = () => {
     <div className="bg-gray-900 relative z-20 py-20">
       <div className="container mx-auto px-6 text-center">
         
-        <h2 className="text-3xl md:text-4xl font-bold text-rose-400 mb-4">
-          A Symphony of Student Talent
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
+          Over 40 Years of Music Making
         </h2>
 
         <p className="max-w-3xl mx-auto text-lg text-gray-300 mb-8">
@@ -28,7 +28,7 @@ const AboutTeaserSection = () => {
         */}
         <Link 
           to="/about/our-story"
-          className="px-8 py-3 bg-transparent border-2 border-rose-600 text-rose-600 font-bold rounded-full hover:bg-rose-600 hover:text-black transform hover:scale-105 transition-all duration-300"
+          className="px-8 py-3 bg-transparent border-2 border-blue-600 text-blue-600 font-bold rounded-full hover:bg-blue-600 hover:text-black transform hover:scale-105 transition-all duration-300"
         >
           Discover Our Story
         </Link>

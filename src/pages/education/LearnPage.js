@@ -77,7 +77,7 @@ const LearnPage = () => {
     <>
       <title>Learn About the Chamber Orchestra | EUCO Education Hub</title>
       <Header />
-      <main>
+      <main className="pt-16 md:pt-20">
         <Section title="What is a Chamber Orchestra?">
           <div className="max-w-4xl mx-auto text-center text-lg text-gray-300 leading-relaxed">
             <p>A chamber orchestra is a smaller orchestra, typically consisting of around 15 to 45 musicians. This smaller size allows for a more intimate and detailed performance, where each instrument's voice can be clearly heard.</p>

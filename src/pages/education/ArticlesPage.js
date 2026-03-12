@@ -11,11 +11,11 @@ const ArticlesPage = () => {
     <>
       <title>Articles | EUCO Education Hub</title>
       <Header />
-      <main>
+      <main className="pt-16 md:pt-20">
         <Section title="Articles">
             {/* This is a placeholder for a blog feed. For now, we'll just display the one article */}
             <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg p-8">
-                <h2 className="text-3xl font-bold text-rose-400">{ravelArticle.title}</h2>
+                <h2 className="text-3xl font-bold text-blue-400">{ravelArticle.title}</h2>
                 <p className="text-gray-400 my-2">By {ravelArticle.author} on {ravelArticle.date}</p>
                 <p className="text-lg text-gray-300 leading-relaxed my-6">{ravelArticle.excerpt}</p>
 

@@ -37,7 +37,7 @@ const HomeSection = ({ opacity }) => {
         {/* The main text content with a higher z-index */}
         <div className="relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
-            Experience <span className="text-rose-400">Chamber</span> Orchestra
+            Experience <span className="text-blue-400">Chamber</span> Orchestra
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
             Edinburgh's fully auditioned student-led ensemble dedicated to performing chamber music at the highest level - join us for our 2025/26 season!

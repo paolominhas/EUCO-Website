@@ -14,7 +14,7 @@ const ComposersPage = () => {
     <>
       <title>Composers | EUCO Education Hub</title>
       <Header />
-      <main>
+      <main className="pt-16 md:pt-20">
         <Section title="Composer Database">
           <div className="max-w-4xl mx-auto space-y-4">
             {composers.sort((a, b) => {
@@ -30,12 +30,12 @@ const ComposersPage = () => {
                     className="w-24 h-24 rounded-full flex-shrink-0 object-cover" 
                   />
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-rose-400">{composer.name}</h3>
+                    <h3 className="text-2xl font-bold text-blue-400">{composer.name}</h3>
                     <p className="text-gray-400">{composer.lifespan}</p>
                     <p className="text-gray-300 mt-2 hidden md:block">{composer.bio}</p>
                   </div>
                    <span className={`transform transition-transform duration-300 ${openId === composer.id ? 'rotate-180' : ''}`}>
-                    <svg className="w-8 h-8 text-rose-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg className="w-8 h-8 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                   </span>
                 </button>
                 <div className={`faq-answer ${openId === composer.id ? 'open' : ''}`}>

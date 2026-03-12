@@ -10,24 +10,24 @@ const Auditions = () => {
           content="Information for the 2025/26 season auditions for the Edinburgh University Chamber Orchestra (EUCO). Find dates, times, location, and what to prepare." 
         />
 
-      <Section title="Auditions for the 2025/26 Season">
+      <Section title="Auditions for the 2026/27 Season">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           
           {/* Left Column: Information */}
           <div className="text-gray-300 leading-relaxed space-y-4">
             <h3 className="text-2xl font-semibold text-white mb-4">Join the Orchestra</h3>
             <p>
-              Auditions for all sections (violin, viola, cello, double bass, winds, brass, and percussion) will be held at the beginning of the academic year. We cannot wait to meet all the dedicated and passionate musicians auditioning for EUCO.
+              Auditions for all sections (violin, viola, cello, double bass, winds, brass, and percussion) will be held at the beginning of the academic year. Unfortunately auditions for the 2025/26 season have already taken place. Please contact us if you are interested in future opportunities.
             </p>
             
-            <div className="bg-gray-800 p-6 rounded-lg border-l-4 border-rose-600 space-y-3 mt-6">
+            <div className="bg-gray-800 p-6 rounded-lg border-l-4 border-blue-600 space-y-3 mt-6">
               <div>
                 <p className="font-bold text-lg text-white">Date:</p>
-                <p>Saturday & Sunday, 20th/21st September 2025</p>
+                <p>Saturday & Sunday after week 1 September 2026</p>
               </div>
               <div>
                 <p className="font-bold text-lg text-white">Time:</p>
-                <p>9:00 AM - 5:00 PM (Sign-up for a specific slot below)</p>
+                <p>9:00 AM - 5:30 PM (Sign-up for a specific slot below)</p>
               </div>
               <div>
                 <p className="font-bold text-lg text-white">Location:</p>
@@ -37,7 +37,15 @@ const Auditions = () => {
             
             <h4 className="text-xl font-semibold text-white pt-6">What to Prepare:</h4>
             <p>
-              Please prepare one short (under 5 minutes), unaccompanied piece of your own choice that best demonstrates your technical ability and musicality. You may also be asked to perform a short sight-reading excerpt.
+              Future auditions will be held in 2026. You will be asked to prepare:
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>A solo piece of your choice (2-3 minutes)</li>
+              <li>Orchestral excerpts provided in advance</li>
+              <li>A sight-reading passage</li>
+            </ul>
+            <p>
+              Please bring your own instrument and any necessary accessories (e.g., reeds, mutes). We typically do not provide a piano accompianist.
             </p>
 
             {/* NOTE: When your sign-up form (e.g., Google Form) is ready,
@@ -48,7 +56,7 @@ const Auditions = () => {
             */}
             <button 
               disabled 
-              className="mt-6 px-6 py-3 bg-rose-600 text-black font-bold rounded-full hover:bg-rose-500 transform transition-all duration-300 opacity-60 cursor-not-allowed"
+              className="mt-6 px-6 py-3 bg-blue-600 text-black font-bold rounded-full hover:bg-blue-500 transform transition-all duration-300 opacity-60 cursor-not-allowed"
             >
               Sign-up Link Coming Soon
             </button>
