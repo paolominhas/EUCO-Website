@@ -116,7 +116,9 @@ const Home = () => {
               Donate Now
             </a>
           </div>
+        
         </section>
+        
       </main>
     </>
   );

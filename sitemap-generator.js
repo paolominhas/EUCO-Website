@@ -14,22 +14,30 @@ const { routePaths } = require('./src/route-paths'); // Your static routes
 
 const hostname = 'https://www.eu-co.co.uk';
 
+// Define the folders you want to scan
+const imageFolders = [
+  'backgrounds',
+  'composerheads',
+  'conductors',
+  'favicon',
+  'gallery',
+  'images'
+];
+
+// Supported image extensions
+const allowedExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.svg', '.gif'];
+
 /**
- * == IMPORTANT! ==
- * Manually define your video metadata here.
- * - fileName: The name of the video file in /public/videos.
- * - pagePath: The route where this video appears (e.g., '/concerts').
- * - thumbnailName: The name of the thumbnail image in /public/images/thumbnails.
- * - duration: The video duration in seconds.
+ * Video Metadata Configuration
  */
 const videoMetadata = [
   {
     fileName: 'opera-background.webm',
     pagePath: '/about/opera',
     title: 'EUCO 2025-26 Season Preview',
-    description: 'An interview of our conductor Will Conway discussing the making iof our annual opera production.',
+    description: 'An interview of our conductor Will Conway discussing the making of our annual opera production.',
     thumbnailName: 'Cello.jpg',
-    duration: 125, // in seconds (e.g., 2 minutes 5 seconds)
+    duration: 125, 
   }
 ];
 
@@ -38,19 +46,34 @@ const videoMetadata = [
 // ====================================================================
 
 /**
- * Scans a directory for files of a certain type and returns their full URLs.
- * @param {string} dirPath - The path to the directory (e.g., 'public/images').
- * @param {string[]} allowedExtensions - An array of file extensions to include (e.g., ['.jpg', '.png']).
- * @returns {string[]} An array of full URLs for the found files.
+ * Scans a directory for files and returns their web-accessible URLs and filenames.
  */
-function getFilesFromDir(dirPath, allowedExtensions) {
-  const directory = path.join(__dirname, dirPath);
-  if (!fs.existsSync(directory)) return [];
+function getImagesFromDir(folderName) {
+  const dirPath = path.join(__dirname, 'public', folderName);
   
-  const files = fs.readdirSync(directory);
+  if (!fs.existsSync(dirPath)) {
+    console.warn(`Warning: Directory not found: ${dirPath}`);
+    return [];
+  }
+
+  const files = fs.readdirSync(dirPath);
+  
   return files
-    .filter(file => allowedExtensions.some(ext => file.endsWith(ext)))
-    .map(file => `${hostname}/${path.join(dirPath.replace('public/', ''), file)}`);
+    .filter(file => allowedExtensions.some(ext => file.toLowerCase().endsWith(ext)))
+    .map(file => {
+      // Create a clean title from the filename (e.g., "philip-higham.jpg" -> "Philip Higham")
+      const title = file
+        .replace(/\.[^/.]+$/, "") // Remove extension
+        .replace(/-/g, ' ')       // Replace dashes with spaces
+        .replace(/_/g, ' ')       // Replace underscores with spaces
+        .replace(/\b\w/g, l => l.toUpperCase()); // Capitalize first letter of each word
+
+      return {
+        url: `${hostname}/${folderName}/${file}`,
+        title: title,
+        caption: title // Google uses caption as well
+      };
+    });
 }
 
 // ====================================================================
@@ -60,60 +83,99 @@ function getFilesFromDir(dirPath, allowedExtensions) {
 async function generateSitemap() {
   console.log('Generating sitemap...');
 
-  // 1. Find all media files
-  const imageFiles = getFilesFromDir('public/images', ['.jpg', '.jpeg', '.png', '.webp']);
-  const backgroundFiles = getFilesFromDir('public/backgrounds', ['.jpg', '.jpeg', '.png']);
-  const conductorFiles = getFilesFromDir('public/conductors', ['.jpg', '.jpeg', '.png']);
-
-  // 2. Define page-to-media associations
-  // Here, we manually associate pages with the images that appear on them.
-  const links = routePaths.map(path => {
-    const link = { url: path, changefreq: 'daily', priority: 0.7, img: [], video: [] };
-
-    // Add images based on the page path
-    switch (path) {
-      case '/':
-        link.priority = 1.0;
-        link.img.push({ url: `${hostname}/images/orchestra-hero.jpg`, title: 'The Edinburgh University Chamber Orchestra performing' });
-        break;
-      case '/about':
-        link.img.push({ url: `${hostname}/images/PhillipClose.jpg`, title: 'About the Orchestra' });
-        link.img.push({ url: `${hostname}/backgrounds/stringers-shop.jpg`, title: 'Our sponsor Stringers of Edinburgh' });
-        break;
-      case '/about/conductors': // Example of adding a whole folder of images to a page
-        conductorFiles.forEach(fileUrl => {
-          const conductorName = path.basename(fileUrl, path.extname(fileUrl)).replace(/-/g, ' ').replace(/(^\w|\s\w)/g, m => m.toUpperCase());
-          link.img.push({ url: fileUrl, title: `Conductor: ${conductorName}` });
-        });
-        break;
-      case '/outreach':
-        link.img.push({ url: `${hostname}/images/community.jpg`, title: 'EUCO Community Outreach Programme' });
-        break;
-    }
-    return link;
+  // 1. Harvest all images from the specific folders
+  const allImages = {};
+  imageFolders.forEach(folder => {
+    allImages[folder] = getImagesFromDir(folder);
+    console.log(`Found ${allImages[folder].length} images in /public/${folder}`);
   });
 
-  // 3. Add video data to the associated pages
-  videoMetadata.forEach(video => {
-    const pageLink = links.find(link => link.url === video.pagePath);
-    if (pageLink) {
-      pageLink.video.push({
+  // 2. Build the Sitemap Links
+  const links = routePaths.map(route => {
+    const pageData = { 
+      url: route, 
+      changefreq: 'weekly', 
+      priority: 0.7, 
+      img: [], 
+      video: [] 
+    };
+
+    // --- SMART IMAGE ASSOCIATION LOGIC ---
+    // We try to attach images to the most relevant page.
+
+    // A. CONDUCTORS PAGE: Add all images from /conductors
+    if (route === '/about/conductors') {
+      pageData.img.push(...allImages['conductors']);
+    }
+
+    // B. GALLERY / MEDIA PAGE: Add all images from /gallery
+    // (Assuming you have a route like '/media' or '/gallery')
+    else if (route === '/concerts') {
+      pageData.img.push(...allImages['gallery']);
+    }
+
+    // C. COMPOSER HEADS: Likely used on repertoire or concerts pages
+    else if (route === '/education' || route === '/education/composers') {
+      pageData.img.push(...allImages['composerheads']);
+    }
+
+    // D. ABOUT PAGES: Add general images
+    else if (route === '/about' || route === '/about/our-story') {
+      // Filter for specific images we know are in the /images folder
+      const relevantImages = allImages['images'].filter(img => 
+        img.url.includes('PhillipClose') || 
+        img.url.includes('orchestra') ||
+        img.url.includes('group')
+      );
+      pageData.img.push(...relevantImages);
+    }
+
+    // E. HOME PAGE: The "Catch-All"
+    // If an image hasn't been specifically assigned, we can dump common assets 
+    // like backgrounds and favicons here so Google still crawls them.
+    else if (route === '/') {
+      pageData.priority = 1.0;
+      pageData.changefreq = 'daily';
+      
+      // Add backgrounds
+      pageData.img.push(...allImages['backgrounds']);
+      
+      // Add general images (that weren't specific to about)
+      pageData.img.push(...allImages['images']);
+      
+      // Add favicons (technically images, good for indexing logo variants)
+      pageData.img.push(...allImages['favicon']);
+    }
+
+    // --- VIDEO ASSOCIATION ---
+    // Add videos to their specific pages
+    const relevantVideos = videoMetadata.filter(v => v.pagePath === route);
+    relevantVideos.forEach(video => {
+      pageData.video.push({
         title: video.title,
         description: video.description,
-        thumbnail_loc: `${hostname}/images/thumbnails/${video.thumbnailName}`,
+        thumbnail_loc: `${hostname}/images/${video.thumbnailName}`, // Assuming thumbnails are in /public/images
         content_loc: `${hostname}/videos/${video.fileName}`,
         duration: video.duration,
+        family_friendly: 'yes',
+        live: 'no'
       });
-    }
+    });
+
+    return pageData;
   });
 
-  // 4. Generate the XML
+  // 3. Generate XML
   const stream = new SitemapStream({ hostname });
   const xml = await streamToPromise(Readable.from(links).pipe(stream)).then(data => data.toString());
 
+  // 4. Write to file
   fs.writeFileSync('./public/sitemap.xml', xml);
   
-  console.log('Sitemap generated successfully at ./public/sitemap.xml!');
+  console.log('✅ Sitemap generated successfully at ./public/sitemap.xml');
+  console.log(`   Included ${links.length} pages.`);
 }
 
-generateSitemap();
+generateSitemap().catch(err => {
+  console.error("Error generating sitemap:", err);
+});

@@ -1,6 +1,6 @@
 export const featuredArtist = {
-  name: 'Peter Le Tissier',
+  name: 'Tim Espin',
   role: 'Guest Conductor',
-  bio: 'We are delighted to announce that Peter Le Tissier, conductor of Edinburgh City Orchestra and Surbition Symphony Orchestra will conduct the orchestra for the first half of our new season. He joins us for our November concert to conduct Mendelssohn\'s "Italian" Symphony, Prokofiev and Brahms.',
-  image: '/conductors/peterlt.png',
+  bio: 'We are thrilled to announce that Tim Espin has returned as conductor of EUCO after 3 years. With an exciting and bold programme, EUCO explores underrepresented Scandinavian composers this semester. As a part of his mission with the Aurora Ensemble, Tim champions underrepresented composers, and we are extremely proud to be a part of this journey with him. With Tim\'s expert guidance and musicianship, our Aurora Skies concert absolutely can\'t be missed!',
+  image: '/conductors/tim.jpg',
 };

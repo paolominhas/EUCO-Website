@@ -4,8 +4,8 @@ import SignupForm from '../components/SignUpForm';
 
 // Data for the FAQ section
 const faqData = [
-  { question: 'When and where are rehearsals?', answer: 'Rehearsals are held weekly on Tuesday evenings from 7:00 PM to 9:30 PM at the Reid Music Hall. We also have occasional sectional rehearsals on weekends leading up to a concert.' },
-  { question: 'What is the attendance policy?', answer: 'We expect members to attend all rehearsals. We understand that academic commitments can arise, so we allow for a certain number of excused absences per term. Please communicate any potential absences with your section principal in advance.' },
+  { question: 'When and where are rehearsals?', answer: 'Rehearsals are held weekly on Tuesday evenings from 6:15 PM to 9:15 PM at the Reid Music Hall. We also have occasional sectional rehearsals on weekends leading up to a concert.' },
+  { question: 'What is the attendance policy?', answer: 'We expect members to attend all rehearsals. We understand that academic commitments can arise, so we allow for a certain number of excused absences per term. Please communicate any potential absences with your section principal in advance. The absence form can be found at the bottom of this page.' },
   { question: 'Are there any membership fees?', answer: 'Yes, there is a small membership fee collected at the beginning of each semester. This fee helps cover costs such as music hire, venue booking, and conductor fees. Financial assistance is available if needed.' },
   { question: 'What kind of social events do you have?', answer: 'We have a vibrant social calendar! This includes post-rehearsal pub trips, a formal music ball, a yearly ceilidh, and other fun events throughout the year to help members connect and relax outside of rehearsals.' },
 ];
@@ -49,6 +49,7 @@ const FAQ = () => {
         </div>
       </Section>
       <SignupForm />
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9Ln-8lq-9UX1C8SskSfX3zguY-__xLYeUj-S2j-ePVgZsVQ/viewform" target="_blank" rel="noopener noreferrer">Absence Form</a>.
     </>
   );
 };

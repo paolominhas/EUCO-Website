@@ -23,7 +23,7 @@ const ConcertoCompetition = () => {
             careers in music.
           </p>
           <p>
-            Applications for the 2025/26 competition will open in October. Further details about
+            Applications for the 2026/27 competition will open in October. Further details about
             the application process and key dates will be posted here shortly.
           </p>
           <div className="mt-10">
@@ -31,7 +31,7 @@ const ConcertoCompetition = () => {
               disabled
               className="px-10 py-4 bg-blue-600 text-black font-bold text-xl rounded-full hover:bg-blue-500 transform transition-all duration-300 cursor-not-allowed opacity-60"
             >
-              Applications Open Soon
+              Applications Open October
             </button>
           </div>
         </div>

@@ -27,7 +27,6 @@ import tchaikovsky5Image from '../assets/gallery/March25/Bruch.jpg';
 import brahms1Image from '../assets/gallery/March25/Bruch.jpg';
 import haydn88Image from '../assets/gallery/March25/Bruch.jpg';
 import mendelssohn4Image from '../assets/gallery/Nov25/mendelssohn4.jpg';
-import eroicaImage from '../assets/gallery/March25/Bruch.jpg';
 import ravelintroImage from '../assets/gallery/ChamberConcerts/ravelintro.jpeg';
 import masterpiecesImage from '../assets/gallery/ChamberConcerts/masterpieces.jpg';
 
@@ -45,8 +44,9 @@ const upcomingConcertsData = [
       program: ["Mendelssohn - Symphony No. 4 \"The Italian\"", "Prokofiev - Symphony No. 1", "Brahms - Schicksalslied (with the Edinburgh University Singers)"], 
       image: mendelssohn4Image, 
       tickets: true,
-      programmeNotes: "A passionate evening exploring classical and early 20th-century masterpieces, featuring Mendelssohn's vibrant 'Italian' Symphony, Prokofiev's charming First, and Brahms' profound 'Schicksalslied'.",
-      galleryFolder: 'Nov25' // Example: if you have a folder for this concert
+      programmeNotes: "An enthralling evening featuring Mendelssohn's vibrant 'Italian' Symphony, Prokofiev's charming First, and Brahms' profound 'Schicksalslied'.",
+      galleryFolder: 'Nov25', // Example: if you have a folder for this concert
+      isoDate: '2025-11-28T19:30:00+00:00' // Example ISO date for structured data
     },
     { 
       title: 'Chiristmas Charity Concert',
@@ -57,21 +57,23 @@ const upcomingConcertsData = [
       program: ['Christmas Concert (lots of fun music)'],
       image: bruchImage, // Placeholder image
       programmeNotes: "Join us for a festive celebration of seasonal favourites and orchestral delights, perfect for getting into the holiday spirit!",
-      galleryFolder: 'Dec25' // Example
+      galleryFolder: 'Dec25', // Example
+      isoDate: '2025-12-01T19:30:00+00:00' // Example ISO date for structured data
     },
 ];
 
 const chamberConcertsData = [
     { 
       title: 'Chamber Music into the 20th Century',
-      date: 'December 15, 2025', 
+      date: 'December 2, 2025', 
       time: '7:30 PM', 
       venue: 'Reid Concert Hall', 
       tickets: false,
       program: ['Ravel - Introduction and Allegro for Flute, Clarinet, Harp & Strings', 'Shostakovich - Piano Quintet in G minor Op. 57', 'Ravel - Ma Mere L\'Oye for Piano Duet', 'Mahler - Piano Quartet in A minor'],
       image: ravelintroImage, // Placeholder image
       programmeNotes: "An intimate evening of chamber masterpieces, showcasing the intricate beauty and emotional depth of Ravel, Shostakovich, and Mahler's chamber works.",
-      galleryFolder: 'Dec15-2025' // Example
+      galleryFolder: 'Dec15-2025', // Example
+      isoDate: '2025-12-02T19:30:00+00:00' // Example ISO date for structured data
     },
     { 
       title: 'Strings and Friends: Masterpieces of the Chamber Repertoire',
@@ -82,7 +84,8 @@ const chamberConcertsData = [
       program: ['Haydn - String Quartet Op. 76 No. 3 "Emperor"', 'Dvořák - Piano Quintet in A major Op. 81', 'Brahms - String Sextet No. 1 in B-flat major Op. 18'],
       image: masterpiecesImage, // Placeholder image
       programmeNotes: "Experience the elegance of Haydn, the romanticism of Dvořák, and the lush harmonies of Brahms in this exquisite chamber concert.",
-      galleryFolder: 'May10-2025' // Example
+      galleryFolder: 'May10-2025', // Example
+      isoDate: '2025-05-10T19:30:00+00:00' // Example ISO date for structured data
     },
 ];
 
@@ -91,7 +94,7 @@ const pastConcertsData = [
         title: 'Mendelssohn & Bruch',
         date: 'March 21, 2025', 
         venue: 'Reid Concert Hall', 
-        program: ['Mendelssohn - Symphony No. 3 (Scottish)', 'Bruch - Violin Concerto No. 1'], 
+        program: ['Mendelssohn - Symphony No. 3 (Scottish)', 'Bruch - Violin Concerto No. 1', 'Vanhal - Double Bassoon Concerto', 'Schmeltzer - Serenata'], 
         description: 'A captivating performance featuring Mendelssohn\'s Scottish Symphony and Bruch\'s Violin Concerto.', 
         image: bruchImage, // Corrected path to be absolute from public folder
         programmeNotes: "An evening dedicated to the romantic landscapes of Scotland and the virtuosic Bruch Violin Concerto.",
@@ -103,7 +106,7 @@ const pastConcertsData = [
         title: 'Mozart & Beethoven',
         date: 'November 22, 2024', 
         venue: 'Reid Concert Hall', 
-        program: ['Mozart - Symphony 31 "Paris"', 'Beethoven - Symphony 2'], 
+        program: ['Mozart - Symphony 31 "Paris"', 'Beethoven - Symphony 2', 'Schubert - Entr\'acte no. 3 from Rosamunde', 'Debussy - Petite Suite'], 
         description: 'An exciting concert showcasing Mozart\'s "Paris" Symphony and Beethoven\'s Second Symphony.', 
         image: beethoven2Image,
         programmeNotes: "A classical journey featuring the vibrant Parisian spirit of Mozart and the early romantic brilliance of Beethoven.",
@@ -111,10 +114,10 @@ const pastConcertsData = [
     },
     
     { 
-        title: 'Tchaikovsky & Rachmaninoff',
-        date: 'May 4, 2024', 
-        venue: 'St Cecilia\'s Hall', 
-        program: ['Tchaikovsky - Symphony No. 5', 'Rachmaninoff - Piano Concerto No. 2'], 
+        title: 'Beethoven & Ibert',
+        date: 'March 19, 2024', 
+        venue: 'Reid Concert Hall', 
+        program: ['Beethoven - Symohony 8', 'Mendelssohn - Die Schöne Melusine Overture', 'Ibert - Flute Concerto'], 
         description: 'A thrilling concert featuring Tchaikovsky\'s Fifth Symphony and Rachmaninoff\'s Piano Concerto No. 2.', 
         image: tchaikovsky5Image,
         programmeNotes: "An unforgettable evening of passionate Russian romanticism with Tchaikovsky's Fifth and Rachmaninoff's iconic Piano Concerto.",
@@ -122,10 +125,10 @@ const pastConcertsData = [
     },
     
     { 
-        title: 'Brahms & Dvořák',
-        date: 'March 2, 2024', 
+        title: 'Faure & Ravel',
+        date: 'November 24, 2023', 
         venue: 'Reid Concert Hall', 
-        program: ['Brahms - Symphony No. 1', 'Dvořák - Cello Concerto'], 
+        program: ['Chevalier - Symphony 2', 'Faure - Pelléas et Mélisande Suite', 'Ravel - Pavane pour une infante défunte', 'Poulenc - Sinfonietta'], 
         description: 'A powerful concert featuring Brahms\' Symphony No. 1 and Dvořák\'s Cello Concerto.', 
         image: brahms1Image,
         programmeNotes: "A magnificent programme featuring Brahms' monumental First Symphony and Dvořák's beloved Cello Concerto.",
@@ -133,10 +136,10 @@ const pastConcertsData = [
     },
     
     { 
-        title: 'Haydn & Schumann',
-        date: 'November 24, 2023', 
+        title: 'Beethoven & Dvořák',
+        date: 'March 25, 2023', 
         venue: 'Reid Concert Hall', 
-        program: ['Haydn - Symphony No. 88', 'Schumann - Piano Concerto'], 
+        program: ['Mozart - La Clemenza di Tito', 'Beethoven - Piano Concerto No. 5 "Emperor"', 'Nelson - Dance Variations', 'Dvořák - Czech Suite'], 
         description: 'A captivating concert showcasing Haydn\'s Symphony No. 88 and Schumann\'s Piano Concerto.', 
         image: haydn88Image,
         programmeNotes: "A charming blend of classical elegance with Haydn's Symphony No. 88 and the poetic beauty of Schumann's Piano Concerto.",
@@ -144,26 +147,16 @@ const pastConcertsData = [
     },
     
     { 
-        title: 'Mendelssohn & Bruch',
-        date: 'May 5, 2023', 
-        venue: 'St Cecilia\'s Hall', 
-        program: ['Mendelssohn - Symphony No. 4 "Italian"', 'Bruch - Violin Concerto No. 1'], 
+        title: 'Mendelssohn & Smyth',
+        date: 'December 2, 2022', 
+        venue: 'Reid Concert Hall', 
+        program: ['Mozart - Don Giovanni Overture', 'Mendelssohn - A Midsummer Night\'s Dream', 'Smyth - Serenade in D Major'], 
         description: 'A delightful concert featuring Mendelssohn\'s "Italian" Symphony and Bruch\'s Violin Concerto No. 1.', 
         image: bruchImage,
         programmeNotes: "A delightful journey through sun-drenched Italian landscapes and a virtuosic violin showcase.",
         galleryFolder: 'May05-2023' // Example
     },
     
-    { 
-        title: 'Mozart & Beethoven',
-        date: 'March 3, 2023', 
-        venue: 'Reid Concert Hall', 
-        program: ['Mozart - Symphony No. 40', 'Beethoven - Symphony No. 3 "Eroica"'], 
-        description: 'An exhilarating concert featuring Mozart\'s Symphony No. 40 and Beethoven\'s "Eroica" Symphony.', 
-        image: eroicaImage,
-        programmeNotes: "An exhilarating program featuring the intensity of Mozart's 40th and the heroic spirit of Beethoven's 'Eroica' Symphony.",
-        galleryFolder: 'Mar03-2023' // Example
-    },
 ];
 
 export { upcomingConcertsData, chamberConcertsData, pastConcertsData };

@@ -40,7 +40,6 @@ const ContactUsDirectly = () => {
   };
 
   // --- SEO DATA ---
-  const orchestraName = "Edinburgh University Chamber Orchestra";
   const pageUrl = "https://www.eu-co.co.uk/contact-us/direct"; // IMPORTANT: Replace with your actual domain
   const socialImage = `${pageUrl}/images/contact-Bruch.jpg`; // A dedicated social sharing image
 
@@ -50,11 +49,11 @@ const ContactUsDirectly = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": `Contact Us | ${orchestraName}`,
+    "name": `Contact Us | Edinburgh University Chamber Orchestra`,
     "url": pageUrl,
     "mainEntity": {
       "@type": "MusicGroup",
-      "name": orchestraName,
+      "name": "Edinburgh University Chamber Orchestra",
       "url": "https://www.eu-co.co.uk",
       "sameAs": [
         "https://www.facebook.com/EdinburghUniversityChamberOrchestra",
@@ -75,13 +74,13 @@ const ContactUsDirectly = () => {
       {/* ================================================================== */}
       {/* ======================= SEO & METADATA ========================= */}
       {/* ================================================================== */}
-      
-      <title>Contact Us | {orchestraName}</title>
+
+      <title>Contact Us | Edinburgh University Chamber Orchestra</title>
       <meta name="description" content="Get in touch with the EUCO committee. Ask questions about concerts, sponsorship, or auditions. Find our email and social media links." />
       <link rel="canonical" href={pageUrl} />
       
       {/* --- Open Graph (for social media sharing) --- */}
-      <meta property="og:title" content={`Contact Us | ${orchestraName}`} />
+      <meta property="og:title" content={`Contact Us | Edinburgh University Chamber Orchestra`} />
       <meta property="og:description" content="Have a question? Send us a message directly through our contact form." />
       <meta property="og:image" content={socialImage} />
       <meta property="og:url" content={pageUrl} />

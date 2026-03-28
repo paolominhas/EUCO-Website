@@ -1,72 +1,161 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Section from '../components/Section';
-import SignupForm from '../components/SignUpForm'; // Corrected component name if needed
+import { motion } from 'framer-motion';
+import { 
+  EnvelopeIcon, 
+  QuestionMarkCircleIcon, 
+  ChatBubbleLeftRightIcon,
+  ArrowRightIcon
+} from '@heroicons/react/24/outline';
+import SignupForm from '../components/SignUpForm';
+
+// You can replace this with your specific image path like '/backgrounds/contact-hero.jpg'
+const HERO_IMAGE = "https://images.unsplash.com/photo-1514119977450-3a5855d858c4?q=80&w=2574&auto=format&fit=crop";
 
 const ContactUs = () => {
   return (
     <>
       <title>Contact Us | Edinburgh University Chamber Orchestra</title>
-      <meta name="description" content="Get in touch with EUCO. Send us a message directly or find answers to frequently asked questions about the orchestra." />
+      <meta name="description" content="Get in touch with EUCO. Send us a message or find answers to FAQs." />
 
-      {/* --- Section 1: Hero Section with Background Image --- */}
-      <div 
-        className="relative pt-32 pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/backgrounds/contact-hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
-        <div className="relative container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white">Get In Touch</h1>
-          <p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
-            We'd love to hear from you. Whether you're a prospective member, a potential sponsor, or a member of the audience, here's how to reach us.
-          </p>
+      <main className="min-h-screen bg-slate-950 relative overflow-hidden selection:bg-indigo-500/30 text-white">
+        
+        {/* ================================================================== */}
+        {/* =========== 1. NEW: DIAGONAL ARTISTIC IMAGE LAYER ================ */}
+        {/* ================================================================== */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* The Image Container with Diagonal Clip Path */}
+          <motion.div 
+             initial={{ opacity: 0, scale: 1.1 }}
+             animate={{ opacity: 0.25, scale: 1 }} // Low opacity for subtle blend
+             transition={{ duration: 1.5 }}
+             className="absolute inset-0 bg-cover bg-center grayscale"
+             style={{ 
+               backgroundImage: `url(${HERO_IMAGE})`,
+               // This creates the diagonal slice: Top-Left -> Top-Right -> Bottom-Right -> Left-Edge-at-60%-height
+               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 60%)"
+             }}
+          />
+          {/* A gradient overlay to ensure text readability over the image area */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950"></div>
         </div>
-      </div>
-      
-      {/* --- Section 2: Contact Options --- */}
-      <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto -mt-32 relative z-10">
-          
-          {/* Card 1: Contact Us Directly */}
-          <Link 
-            to="/contact-us/direct" 
-            className="group bg-gray-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 shadow-2xl"
-          >
-            <div className="bg-blue-600/20 text-blue-400 rounded-full h-16 w-16 flex items-center justify-center">
-              {/* SVG Icon for Email */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-white mt-6 mb-2">Contact Us Directly</h3>
-            <p className="text-gray-400">Send a message to our committee for enquiries about auditions, concerts, or sponsorship.</p>
-            <p className="mt-6 font-semibold text-blue-500 group-hover:text-blue-400 transition-colors">
-              Send a Message &rarr;
-            </p>
-          </Link>
-          
-          {/* Card 2: FAQ */}
-          <Link 
-            to="/contact-us/faq" 
-            className="group bg-gray-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300 shadow-2xl"
-          >
-            <div className="bg-blue-600/20 text-blue-400 rounded-full h-16 w-16 flex items-center justify-center">
-              {/* SVG Icon for Question Mark */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-white mt-6 mb-2">FAQ</h3>
-            <p className="text-gray-400">Find answers to the most common questions about rehearsals, fees, and social events.</p>
-            <p className="mt-6 font-semibold text-blue-500 group-hover:text-blue-400 transition-colors">
-              View Questions &rarr;
-            </p>
-          </Link>
-          
-        </div>
-      </Section>
 
-      <SignupForm />
+        {/* --- 2. DYNAMIC BACKGROUND MESH BLOBS (Sitting behind image) --- */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+           <motion.div 
+             animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+             className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen" 
+           />
+           <motion.div 
+             animate={{ scale: [1, 1.1, 1], x: [0, 100, 0] }}
+             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+             className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-fuchsia-600/10 rounded-full blur-[100px] mix-blend-screen" 
+           />
+        </div>
+
+        {/* --- 3. HEADER SECTION --- */}
+        <div className="relative z-10 pt-32 pb-16 px-6 container mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-400/30 bg-indigo-900/20 backdrop-blur-md text-indigo-300 text-sm font-bold tracking-widest uppercase mb-8 shadow-lg">
+              <ChatBubbleLeftRightIcon className="w-4 h-4" /> Let's Talk
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-200 drop-shadow-lg">
+              Get In Touch
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+              Whether you're a prospective member, a potential sponsor, or a loyal audience member, we are here to help.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* --- 4. INTERACTIVE CARDS SECTION --- */}
+        <div className="relative z-10 container mx-auto px-6 pb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            {/* CARD A: DIRECT CONTACT */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <Link 
+                to="/contact-us/direct" 
+                className="group relative block h-full bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 overflow-hidden hover:border-indigo-500/50 hover:bg-slate-900/60 transition-all duration-500 shadow-2xl"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-16 h-16 bg-indigo-500 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-indigo-500/20 group-hover:scale-110 transition-transform duration-500">
+                    <EnvelopeIcon className="w-8 h-8" />
+                  </div>
+                  
+                  <h2 className="text-3xl font-bold text-white mb-4">Send a Message</h2>
+                  <p className="text-slate-400 text-lg leading-relaxed mb-10 flex-grow">
+                    Have a specific question about auditions, concerts, or sponsorship? Reach out to our committee directly.
+                  </p>
+                  
+                  <div className="flex items-center gap-3 text-indigo-400 font-bold uppercase tracking-wider text-sm group-hover:text-white transition-colors">
+                    Write to us <ArrowRightIcon className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* CARD B: FAQ */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              <Link 
+                to="/contact-us/faq" 
+                className="group relative block h-full bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 overflow-hidden hover:border-fuchsia-500/50 hover:bg-slate-900/60 transition-all duration-500 shadow-2xl"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-16 h-16 bg-fuchsia-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-fuchsia-600/20 group-hover:scale-110 transition-transform duration-500">
+                    <QuestionMarkCircleIcon className="w-8 h-8" />
+                  </div>
+                  
+                  <h2 className="text-3xl font-bold text-white mb-4">Common Questions</h2>
+                  <p className="text-slate-400 text-lg leading-relaxed mb-10 flex-grow">
+                    Curious about rehearsal times, membership fees, or dress codes? Check our FAQ for instant answers.
+                  </p>
+                  
+                  <div className="flex items-center gap-3 text-fuchsia-400 font-bold uppercase tracking-wider text-sm group-hover:text-white transition-colors">
+                    Find Answers <ArrowRightIcon className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+          </div>
+        </div>
+
+        {/* --- 5. SIGNUP FORM INTEGRATION --- */}
+        <div className="relative z-10 pb-20">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden shadow-2xl"
+            >
+               <SignupForm />
+            </motion.div>
+          </div>
+        </div>
+
+      </main>
     </>
   );
 };

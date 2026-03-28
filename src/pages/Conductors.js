@@ -11,6 +11,7 @@ const conductorsData = [
   { name: 'Peter Evans', role: 'Guest Conductor', img: `${process.env.PUBLIC_URL}/conductors/peter.jpg`, url: 'https://meadowsorchestra.org.uk/programme/peter-evans/' },
   { name: 'Richard Lewis', role: 'Guest Conductor', img: `${process.env.PUBLIC_URL}/conductors/richardlewis.jpg`, url: 'https://www.richardjlewis.org' },
   { name: 'David Watkins', role: 'Guest Conductor', img: `${process.env.PUBLIC_URL}/conductors/davidwatkins.jpg`, url: 'https://www.sco.org.uk/news/in-memory-of-david-watkin' },
+  { name: 'Peter Le Tissier', role: 'Guest Conductor', img: `https://images.squarespace-cdn.com/content/v1/5f429cc64cd4e62157408e25/e450a78b-8961-4044-be7c-d71f6d8afa28/EUCO-154.jpg`, url: 'https://www.peterletissier.com' },
 ];
 
 const Conductors = () => {

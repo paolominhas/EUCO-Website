@@ -40,9 +40,8 @@ const Auditions = () => {
               Future auditions will be held in 2026. You will be asked to prepare:
             </p>
             <ul className="list-disc list-inside space-y-2">
-              <li>A solo piece of your choice (2-3 minutes)</li>
+              <li>A solo piece of your choice (up to 5 minutes)</li>
               <li>Orchestral excerpts provided in advance</li>
-              <li>A sight-reading passage</li>
             </ul>
             <p>
               Please bring your own instrument and any necessary accessories (e.g., reeds, mutes). We typically do not provide a piano accompianist.

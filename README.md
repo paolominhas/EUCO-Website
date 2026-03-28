@@ -1,23 +1,15 @@
-# Getting Started with Create React App
+## `EUCO-Website`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Official Website for Edinburgh University Chamber Orchestra
 
-## Available Scripts
+This is the official public-facing website for Edinburgh University Chamber Orchestra. It serves as our second most important form of media (after our instagram) with concert information, ticket sales, and news. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+![A screenshot of the website homepage (25/09/25).](public/backgrounds/hero-photo.jpg)
 
 In the project directory, you can run:
-
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -25,61 +17,16 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
+This app is ready to be deployed!
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# EUCO-Website
-
-# Project Title: The Official Website for Edinburgh University Chamber Orchestra
-
-[![Deployment Status](https://img.shields.io/vercel/deployment/paolominhas/EUCO-Website/main?label=Vercel)](https://euco-website.vercel.app)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpaolominhas%2FEUCO-Website)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/paolominhas/EUCO-Website/ci.yml?branch=main)](https://github.com/paolominhas/EUCO-Website/actions)
+[![Deploy (takes you to main site)](https://vercel.com/button)](https://www.eu-co.co.uk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-This is the official public-facing website for Edinburgh University Chamber Orchestra. It serves as our second most important form of media (after our instagram) with concert information, ticket sales, and news.
-
-![A screenshot of the website homepage (25/09/25).](public/backgrounds/hero-photo.jpg)
 
 ## Table of Contents
 
@@ -96,7 +43,7 @@ This is the official public-facing website for Edinburgh University Chamber Orch
 
 ## About The Project
 
-This project is a complete rewrite of our original website, designed to be fast, modern, and easy to maintain. It's a single-page application (SPA) built with React.
+This project is a complete rewrite of our original website, designed to be fast, modern, and easy to maintain. It was developed from a single-page application  built with React, into a multi-page webapp using React-router.
 
 ### Tech Stack
 
@@ -124,8 +71,8 @@ You can check your versions with `node -v` and `npm -v`.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
-    cd your-repo
+    git clone [https://github.com/paolominhas-EUCO-Website.git](https://github.com/paolominhas-EUCO-Website.git)
+    cd EUCO-Website
     ```
 
 2.  **Install NPM packages:**
@@ -139,13 +86,13 @@ You can check your versions with `node -v` and `npm -v`.
     ```bash
     cp .env.example .env.local
     ```
-    Now, open `.env.local` and fill in the required values (e.g., your API keys for a ticketing service or CMS).
+    Now, open `.env.local` and fill in the required values (e.g., your API keys for email.js and the instagram integration).
 
 ## Project Structure
 
 The `src` folder is organized as follows:
 
-```
+```go
 src/
 ├── assets/         # Static assets like images and fonts
 ├── components/     # Reusable UI components (Button, Card, etc.)

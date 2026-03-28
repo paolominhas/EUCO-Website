@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0A0A0A;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,28 +40,18 @@
 /* The logo animation! (spin and pulse) */
 @keyframes spin-and-pulse {
   0% {
-    /* Start at normal size and no rotation */
     transform: scale(1) rotate(0deg);
   }
   50% {
-    /* At the halfway point, enlarge by 15% and rotate 180 degrees */
     transform: scale(1.15) rotate(180deg);
   }
   100% {
-    /* Return to normal size and complete a full 360-degree rotation */
     transform: scale(1) rotate(360deg);
   }
 }
 
-/*
- * This class applies the animation to the euco logo.
- */
+ /* This class applies the animation to the euco logo.*/
 .logo-animated {
-  /*
-   * animation: [animation-name] [duration] [timing-function] [iteration-count];
-   * The animation runs over 10 seconds, at a constant speed, over an infinite loop.
-   */
-   /* animation: spin-and-pulse 10s linear infinite; */
   transition: transform 0.4s ease-in-out;
 }
 
